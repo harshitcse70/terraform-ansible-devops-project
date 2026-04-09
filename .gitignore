@@ -1,0 +1,10 @@
+# Terraform
+.terraform/
+*.tfstate*
+.terraform.lock.hcl
+
+# SSH keys
+devops-key
+
+# Ansible
+*.retry

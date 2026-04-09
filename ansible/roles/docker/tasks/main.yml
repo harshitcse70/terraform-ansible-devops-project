@@ -1,0 +1,22 @@
+---
+# tasks file for docker
+- name: Update apt
+  apt:
+    update_cache: yes
+
+- name: Install docker
+  apt:
+    name: docker.io
+    state: present
+
+- name: Start docker
+  service:
+    name: docker
+    state: started
+    enabled: yes
+
+- name: Add ubuntu user to docker group
+  user:
+    name: ubuntu
+    groups: docker
+    append: yes
